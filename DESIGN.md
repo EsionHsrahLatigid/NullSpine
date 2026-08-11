@@ -74,7 +74,7 @@
 - Framework/styling system: Repo-native CMake and YUP components only.
 - Design-token constraints: No new assets, no new dependencies, product accent supplied as a constant.
 - Performance constraints: No allocation, locks, I/O, logging, or UI calls in the audio callback; every sample finite and peak-bounded. Release-tail silence is measured after `max(4.0 seconds, Decay * 14.0 seconds)` from gate release, including the default `1.2s` decay and maximum `6.0s` decay.
-- Compatibility constraints: Standalone app ID `audio.2bit.nullspine`, plugin ID `audio.2bit.NullSpine`, AU subtype `NlSp`, state magic/version `NSP1` / `1`.
+- Compatibility constraints: Standalone app ID `jp.ehl.nullspine`, plugin ID `jp.ehl.nullspine`, AU subtype `NlSp`, state magic/version `NSP1` / `1`.
 - Test/screenshot expectations: Unit tests cover stereo DSP identity, deterministic behavior, bounds, parameterized release-tail horizon, state round-trip, trigger/MIDI ownership, meter publication, and static `processBlock` forbidden-operation scanning. No screenshot baseline is required for this native plugin editor.
 
 ## Open questions

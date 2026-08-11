@@ -6,8 +6,8 @@ Version: `0.1.0`
 
 ## Product identity
 
-- Standalone app ID: `audio.2bit.nullspine`
-- Plugin ID: `audio.2bit.NullSpine`
+- Standalone app ID: `jp.ehl.nullspine`
+- Plugin ID: `jp.ehl.nullspine`
 - AU subtype: `NlSp`
 - State magic/version: `NSP1` / `1`
 
