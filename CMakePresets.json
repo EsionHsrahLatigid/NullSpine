@@ -44,7 +44,7 @@
       "name": "plugin-release",
       "configurePreset": "plugin-release",
       "targets": [
-        "nullspine_release_bundles",
+        "ehl_stage_products",
         "nullspine_engine_tests",
         "nullspine_plugin_bridge_tests"
       ]

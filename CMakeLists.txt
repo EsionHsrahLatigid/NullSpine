@@ -144,6 +144,15 @@ if(NULLSPINE_BUILD_PLUGIN)
     add_custom_target(nullspine_release_bundles
         DEPENDS ${nullspine_release_bundle_targets})
 
+    include(cmake/EhlYupArtifactLayout.cmake)
+    ehl_yup_add_artifact_target(
+        TARGET ehl_stage_products
+        PRODUCT NullSpine
+        SLUG nullspine
+        STANDALONE_TARGET nullspine_standalone_plugin
+        VST3_TARGET nullspine_vst3_plugin
+        AU_TARGET nullspine_au_plugin)
+
     if(APPLE)
         set_target_properties(nullspine_standalone_plugin PROPERTIES
             MACOSX_BUNDLE_GUI_IDENTIFIER "jp.ehl.nullspine"

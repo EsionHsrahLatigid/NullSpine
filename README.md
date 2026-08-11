@@ -57,6 +57,10 @@ ctest --preset plugin-release --output-on-failure
 
 Do not use `plugin-release` for lightweight iteration.
 
+## Artifact layout
+
+`cmake --build --preset plugin-release` stages human-facing products under `artifacts/plugin-release/<platform-arch>/{standalone,vst3,au}`. macOS CI uses `macos-arm64`; Windows uses `windows-x64` without AU. `build/` remains CMake's internal workspace, and `ARTIFACTS.txt` describes each staged set.
+
 ## CI and release
 
 `.github/workflows/ci.yml` runs path classification, Debug tests, release bundle builds, tests, package verification, and artifact upload. Artifacts are named exactly:
