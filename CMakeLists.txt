@@ -67,6 +67,12 @@ if(NULLSPINE_BUILD_PLUGIN)
         FetchContent_MakeAvailable(yup)
     endif()
 
+    if(NOT EXISTS "${CMAKE_CURRENT_LIST_DIR}/external/yup-ehl-design-module/CMakeLists.txt")
+        message(FATAL_ERROR "Missing yup-ehl-design-module. Run: git submodule update --init")
+    endif()
+    add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/external/yup-ehl-design-module"
+                     "${CMAKE_BINARY_DIR}/yup-ehl-design-module")
+
     # YUP's iconutil-based helper rejects its generated iconset on current
     # macOS. Keep the compatibility fix project-local until upstream changes.
     if(APPLE)
@@ -110,7 +116,7 @@ if(NULLSPINE_BUILD_PLUGIN)
         source/ProductState.h
         source/NullSpinePlugin.cpp
         source/NullSpinePlugin.h)
-    target_link_libraries(nullspine_shared INTERFACE nullspine_engine)
+    target_link_libraries(nullspine_shared INTERFACE nullspine_engine ehl::yup_plugin_ui)
     target_include_directories(nullspine_shared INTERFACE
         "${CMAKE_CURRENT_LIST_DIR}/include"
         "${CMAKE_CURRENT_LIST_DIR}/source")

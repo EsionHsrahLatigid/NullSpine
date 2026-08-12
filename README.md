@@ -39,6 +39,12 @@ The standalone `Trigger` button and Space key are runtime gates only. They are n
 
 Use the adjacent YUP checkout by default:
 
+Clone with `--recurse-submodules`, or initialize the shared [yup-ehl-design-module](https://github.com/EsionHsrahLatigid/yup-ehl-design-module) before configuring:
+
+```sh
+git submodule update --init
+```
+
 ```sh
 cmake --preset engine-debug
 cmake --build --preset engine-debug --parallel

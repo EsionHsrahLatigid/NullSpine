@@ -287,7 +287,7 @@ yup::AudioProcessorEditor* NullSpinePlugin::createEditor()
     return new ParameterGridEditor (*this,
                                     "NullSpine",
                                     "Hold Trigger or Space to strike the spine. External MIDI takes priority.",
-                                    0xfff2f0e8u);
+                                    0xfff2f2f0u);
 #endif
 }
 
